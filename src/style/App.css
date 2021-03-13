@@ -3,6 +3,7 @@
 }
 
 body {
+  padding-top: 4rem;
   margin: 0;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
@@ -38,4 +39,10 @@ input {
 a {
   text-decoration: none;
   color: #333;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
