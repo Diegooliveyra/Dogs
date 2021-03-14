@@ -1,0 +1,23 @@
+.button {
+  font-size: 1rem;
+  font-family: var(--type-first);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: var(--yellow);
+  color: var(--yellow-contrast);
+  min-width: 8rem;
+  padding: 0.8rem 1.2rem;
+  animation: 0.2s;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px var(--yellow);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}

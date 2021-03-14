@@ -2,10 +2,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --black: #333;
+  --gray-light: #eee;
+  --yellow: #fb1;
+  --yellow-contrast: #764701;
+}
+
 body {
   padding-top: 4rem;
   margin: 0;
-  color: #333;
+  color: var(--black);
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: 'Spectral', georgia;
   font-family: var(--type-first);
@@ -38,7 +45,7 @@ input {
 }
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--black);
 }
 
 .container {
