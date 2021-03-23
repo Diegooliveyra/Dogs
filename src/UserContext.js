@@ -9,14 +9,6 @@ export const UserStorage = ({ children }) => {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
-  async function getUser(token) {
-    const { url, options } = GET_USER(token);
-    const response = await fetch(url, options);
-    const json = await response.json();
-    setData(json);
-    setLogin(true);
-  }
-
   useEffect(() => {
     async function autologin() {
       const token = window.localStorage.getItem('token');
@@ -26,7 +18,7 @@ export const UserStorage = ({ children }) => {
           setLoading(true);
           const { url, options } = TOKEN_VALIDATE_POST(token);
           const response = await fetch(url, options);
-          if (!response.ok) throw new error('Tokin Invalido');
+          if (!response.ok) throw new Error('Tokin Invalido');
           await getUser(token);
         } catch (err) {
           userLogout();
@@ -38,12 +30,29 @@ export const UserStorage = ({ children }) => {
     autologin();
   }, []);
 
-  async function userLogin(username, password) {
-    const { url, options } = TOKEN_POST({ username, password });
+  async function getUser(token) {
+    const { url, options } = GET_USER(token);
     const response = await fetch(url, options);
-    const { token } = await response.json();
-    window.localStorage.setItem('token', token);
-    getUser(token);
+    const json = await response.json();
+    setData(json);
+    setLogin(true);
+  }
+  async function userLogin(username, password) {
+    try {
+      setError(null);
+      setLoading(true);
+      const { url, options } = TOKEN_POST({ username, password });
+      const response = await fetch(url, options);
+      if (!response.ok) throw new Error(`Error: Usuário ou senha inválida`);
+      const { token } = await response.json();
+      window.localStorage.setItem('token', token);
+      await getUser(token);
+    } catch (err) {
+      setError(err.message);
+      setLogin(false);
+    } finally {
+      setLoading(false);
+    }
   }
 
   async function userLogout() {
@@ -55,7 +64,9 @@ export const UserStorage = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ userLogin, data, userLogout }}>
+    <UserContext.Provider
+      value={{ userLogin, data, userLogout, loading, error }}
+    >
       {children}
     </UserContext.Provider>
   );
