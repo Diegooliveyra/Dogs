@@ -1,5 +1,6 @@
 export const API_URL = 'https://dogsapi.origamid.dev/json';
 
+//faz um post e recebe a resposta de um token
 export function TOKEN_POST(body) {
   return {
     url: API_URL + '/jwt-auth/v1/token',
@@ -13,6 +14,7 @@ export function TOKEN_POST(body) {
   };
 }
 
+// faz a validação do token
 export function TOKEN_VALIDATE_POST(token) {
   return {
     url: API_URL + '/jwt-auth/v1/token/validate',
@@ -25,6 +27,7 @@ export function TOKEN_VALIDATE_POST(token) {
   };
 }
 
+//com o token ele pega os dados do usuario
 export function GET_USER(token) {
   return {
     url: API_URL + '/api/user',

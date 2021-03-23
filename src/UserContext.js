@@ -4,12 +4,13 @@ import { GET_USER, TOKEN_POST, TOKEN_VALIDATE_POST } from './Api/api';
 export const UserContext = createContext();
 
 export const UserStorage = ({ children }) => {
-  const [data, setData] = useState(null);
-  const [login, setLogin] = useState(null);
-  const [loading, setLoading] = useState(null);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState(null); //seta um estado com os dados do usuario
+  const [login, setLogin] = useState(null); //seta um estado boleano para saber se o usuario esta logado
+  const [loading, setLoading] = useState(null); // seta um estado de loading
+  const [error, setError] = useState(null); // seta um estado com um erro
 
   useEffect(() => {
+    //Faz uma verificação se ja exite um token salvo no localstorage, sem sim, faz um auto login
     async function autologin() {
       const token = window.localStorage.getItem('token');
       if (token) {
@@ -30,6 +31,7 @@ export const UserStorage = ({ children }) => {
     autologin();
   }, []);
 
+  // função recebe o token e retorna um Json com os dados do usuario
   async function getUser(token) {
     const { url, options } = GET_USER(token);
     const response = await fetch(url, options);
@@ -37,6 +39,9 @@ export const UserStorage = ({ children }) => {
     setData(json);
     setLogin(true);
   }
+
+  // Função recebe o username e password do usuario
+  // verifica se esta correto, se sim amarzena  o token no localstorage
   async function userLogin(username, password) {
     try {
       setError(null);
@@ -55,6 +60,7 @@ export const UserStorage = ({ children }) => {
     }
   }
 
+  // funcão limpa dos dados que forem setados no login
   async function userLogout() {
     setData(null);
     setError(null);
@@ -64,6 +70,7 @@ export const UserStorage = ({ children }) => {
   }
 
   return (
+    // esportar as funcões e estados do userContext
     <UserContext.Provider
       value={{ userLogin, data, userLogout, loading, error }}
     >
