@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -52,4 +54,25 @@ a {
   max-width: 50rem;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
 }
