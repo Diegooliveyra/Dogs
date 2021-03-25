@@ -6,6 +6,11 @@ const types = {
     regex: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
     message: 'Preencha um email valido',
   },
+  password: {
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+    message:
+      'A senha deve conter pelo menos um dígito, uma letra minúscula, uma letra maiúscula, e no minimo 8 caracteres',
+  },
 };
 
 const useForm = (type) => {
