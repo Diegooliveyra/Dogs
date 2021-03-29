@@ -4,9 +4,9 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import User from './Components/User/User';
-import './style/App.css';
 import { UserStorage } from './UserContext';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
+import './style/App.css';
 
 function App() {
   return (
