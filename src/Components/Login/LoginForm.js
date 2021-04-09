@@ -12,13 +12,12 @@ const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  const { userLogin, data, loading, error } = useContext(UserContext);
+  const { userLogin, loading, error } = useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
     if (username.validate() && password.validate()) {
       userLogin(username.value, password.value);
-      console.log(data);
     }
   }
 
