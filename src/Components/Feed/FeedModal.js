@@ -10,10 +10,9 @@ const FeedModal = ({ photo }) => {
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
-    const { url, options } = PHOTO_GET();
+    const { url, options } = PHOTO_GET(photo.id);
     request(url, options);
   }, [photo, request]);
-
   return (
     <div className={styles.modal}>
       {error && <Error error={error} />}
