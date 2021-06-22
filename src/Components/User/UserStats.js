@@ -24,7 +24,6 @@ const UserStats = () => {
     return (
       <div>
         <Head title="Estatistica" />
-        <p>deu</p>
         <UserStatsGraphs data={data} />
       </div>
     );
