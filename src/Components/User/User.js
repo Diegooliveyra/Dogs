@@ -10,11 +10,12 @@ import Head from '../Helper/Head';
 
 const User = () => {
   const { data } = useContext(UserContext);
+
   return (
     <section className="container">
       <UserHeader />
+      <Head title="Minha Conta" />
       <Routes>
-        <Head title="Minha Conta" />
         <Route path="/" element={<Feed user={data.id} />} />
         <Route path="postar" element={<UserPhotoPost />} />
         <Route path="estatisticas" element={<UserStats />} />
