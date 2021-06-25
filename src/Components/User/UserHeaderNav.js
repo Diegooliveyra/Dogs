@@ -31,7 +31,7 @@ const UserHeaderNav = () => {
       )}
       <nav
         className={`${mobile ? styles.navMobile : styles.nav} ${
-          mobileMenu && styles.navMobileAcive
+          mobileMenu && styles.navMobileActive
         }`}
       >
         <NavLink to="/conta" end activeClassName={styles.active}>
