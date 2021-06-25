@@ -1,20 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
+import styles from './UserHeaderNav.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
-import useMedia from '../../Hooks/useMedia';
 import { ReactComponent as MinhasFotos } from '../../Assets/feed.svg';
-import { ReactComponent as AdcionarFoto } from '../../Assets/adicionar.svg';
-import { ReactComponent as Estatistica } from '../../Assets/estatisticas.svg';
+import { ReactComponent as Estatisticas } from '../../Assets/estatisticas.svg';
+import { ReactComponent as AdicionarFoto } from '../../Assets/adicionar.svg';
 import { ReactComponent as Sair } from '../../Assets/sair.svg';
-import styles from './UserHeaderNav.module.css';
+import useMedia from '../../Hooks/useMedia';
 
 const UserHeaderNav = () => {
-  const { userLogout } = useContext(UserContext);
+  const { userLogout } = React.useContext(UserContext);
   const mobile = useMedia('(max-width: 40rem)');
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = React.useState(false);
 
   const { pathname } = useLocation();
-  useEffect(() => {
+  React.useEffect(() => {
     setMobileMenu(false);
   }, [pathname]);
 
@@ -29,6 +29,7 @@ const UserHeaderNav = () => {
           onClick={() => setMobileMenu(!mobileMenu)}
         ></button>
       )}
+
       <nav
         className={`${mobile ? styles.navMobile : styles.nav} ${
           mobileMenu && styles.navMobileActive
@@ -39,12 +40,12 @@ const UserHeaderNav = () => {
           {mobile && 'Minhas Fotos'}
         </NavLink>
         <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
-          <Estatistica />
-          {mobile && 'Estatisticas'}
+          <Estatisticas />
+          {mobile && 'Estatísticas'}
         </NavLink>
         <NavLink to="/conta/postar" activeClassName={styles.active}>
-          <AdcionarFoto />
-          {mobile && 'Adcionar Foto'}
+          <AdicionarFoto />
+          {mobile && 'Adicionar Foto'}
         </NavLink>
         <button onClick={userLogout}>
           <Sair />
