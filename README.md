@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Diegooliveyra/Dogs/63ad8f5a54e8311aefe67d669f0db1db025f3b9b/src/Assets/dogs.svg?token=ANC2B32GH3QGPS2KGTNN2NLA3YECK" alt="Dogs" width="20" height="20"/> Dogs
+# <img src="https://raw.githubusercontent.com/Diegooliveyra/Dogs/63ad8f5a54e8311aefe67d669f0db1db025f3b9b/src/Assets/dogs.svg?token=ANC2B32GH3QGPS2KGTNN2NLA3YECK" alt="Dogs" width="25" height="25"/> Dogs
 
 ## ℹ️ Sobre o projeto
 
@@ -10,7 +10,7 @@ Projeto realizado na conclusão do curso React Completo da escola Origamid. 💜
 
 </br>
 
-[![Image from Gyazo](https://i.gyazo.com/eb8a7669e4eec29c523b2b2f964b5e9c.gif)](https://gyazo.com/eb8a7669e4eec29c523b2b2f964b5e9c)
+![Gif](https://i.gyazo.com/eb8a7669e4eec29c523b2b2f964b5e9c.gif)
 
 </br>
 Você pode conferir o resultado final em: https://dogs-origamid.netlify.app/
