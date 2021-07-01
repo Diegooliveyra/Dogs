@@ -10,7 +10,7 @@ Projeto realizado na conclusão do curso React Completo da escola Origamid. 💜
 
 </br>
 
-![Gif](https://i.gyazo.com/eb8a7669e4eec29c523b2b2f964b5e9c.gif)
+<img src="https://i.gyazo.com/ef8fd9efc662caf62b54c372ca86862e.gif" alt="Image from Gyazo" width="1270"/>
 
 </br>
 Você pode conferir o resultado final em: https://dogs-origamid.netlify.app/
