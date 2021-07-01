@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Diegooliveyra/Dogs/63ad8f5a54e8311aefe67d669f0db1db025f3b9b/src/Assets/dogs.svg?token=ANC2B32GH3QGPS2KGTNN2NLA3YECK" alt="Dogs" width="25" height="25"/> Dogs
+# <img src="https://raw.githubusercontent.com/Diegooliveyra/Dogs/0d5be5717ac27c12a1d0f17019202e300bf98d30/src/Assets/dogs.svg?token=ANC2B35WQOITYH4ZFJXISHDA3YFBK" alt="" width="25" height="25"/> Dogs
 
 ## ℹ️ Sobre o projeto
 
