@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import UserHeaderNav from './UserHeaderNav';
-import styles from './UserHeader.module.css';
 import { useLocation } from 'react-router';
+import styles from './UserHeader.module.css';
+import UserHeaderNav from './UserHeaderNav';
 
 const UserHeader = () => {
   const [title, setTitle] = useState('');
